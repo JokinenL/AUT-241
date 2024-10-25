@@ -1,0 +1,6 @@
+devel/
+build/
+*.bag
+*.wav
+*.mp4
+__pycache__/

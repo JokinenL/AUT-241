@@ -1,0 +1,3 @@
+# Alternative implementation 4
+
+In this implementation both the sia20d robot arm and wsg50 gripper are used as they are defined in their original definition files (motoman_sia20d_support/urdf/sia20d_macro.xacro and wsg50_gripper/urdf/wsg_50.urdf.xacro). They are, however, combined in a new xacro file (dual_arm_robot/urdf/sia20d_with_wsg.xacro) which defines a single sda20d arm with a wsg50 gripper attached to it. The definition of this object is then imported to to the file defining the dual arm robotic system (dual_arm_robot/urdf/sia20d_dual.xacro). Thus, in this file, we only need to create two objects of a kind motoman_sia20d_with_wsg and place them correctly at the world frame.

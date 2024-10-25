@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<robot name="motoman_sia20d" xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:include filename="$(find dual_arm_robot)/urdf/sia20d_macro.xacro"/>
+	<link name="world" />
+	
+	<xacro:motoman_sia20d prefix="one_"/>
+		<joint name="one_world" type="fixed">
+			<parent link="world"/>
+			<child link="one_base_link"/>
+			<origin xyz="0.7 0 0.7" rpy="0 0 0"/>
+		</joint>
+		
+		
+	<xacro:motoman_sia20d prefix="two_"/>
+		<joint name="two_world" type="fixed">
+			<parent link="world"/>
+			<child link="two_base_link"/>
+			<origin xyz="-0.7 0 0.7" rpy="0 0 0"/>
+		</joint>
+		
+	
+</robot>
+

@@ -1,0 +1,3 @@
+# Alternative implementation 2
+
+Here the definition of sia20d robot arm is modified from its original form. The new new definition is included in this package (at dual_arm_robot/urdf/sia20d_macro.xacro). The modification of the new definition compared to the original one (at motoman_sia20d_support/urdf/sia20d_macro.xacro) is that the wsg50 gripper is imported from its original source (wsg50_gripper/urdf/wsg_50.urdf.xacro) as it is and then linked to tool0 frame of the siad20 robot arm already in the definition of the sia20d. Thus, in file dual_arm_robot/urdf/sia20d_dual.xacro we only need to create two sia20d robot arms (imported from dual_arm_robot/urdf/sia20d_macro.xacro) and those will automatically include the wsg50 grippers.

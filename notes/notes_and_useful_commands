@@ -1,0 +1,11 @@
+
+# Visualizing the dual arm robot in Rvitz
+# (replace the package dual_arm_robot with any of the similarily named packages under alternative_implementations
+# to see that all of them work exactly the same despite the different implementation decisions)
+
+source /opt/ros/noetic/setup.bash && \
+cd ~/AUT-841/robot_ws && \
+source devel/setup.bash
+roslaunch dual_arm_robot test_sia20d_dual.launch
+
+# Change the "Fixed Frame" parameter from "base_link" to "world" in order to make the system visible
