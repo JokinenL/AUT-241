@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="dual_arm">
+    <xacro:include filename="$(find assignment_1)/urdf/sia20d_with_wsg.xacro"></xacro:include>
+    <link name="world"/>
+
+    <xacro:sia20d_with_wsg prefix="first_"/>
+    <joint name="first_arm_to_world" type="fixed">
+        <parent link="world"/>
+        <child link="first_arm_base_link"/>
+        <origin xyz="0.7 0 0.7" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:sia20d_with_wsg prefix="second_"/>
+    <joint name="second_arm_to_world" type="fixed">
+        <parent link="world"/>
+        <child link="second_arm_base_link"/>
+        <origin xyz="-0.7 0 0.7" rpy="0 0 0"/>
+    </joint>
+</robot>

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="sia20d_with_wsg" params="prefix">
+        <xacro:include filename="$(find motoman_sia20d_support)/urdf/sia20d_macro.xacro"/>
+        <xacro:include filename="$(find wsg50_gripper)/urdf/wsg_50.urdf.xacro"/>
+
+        <xacro:motoman_sia20d  prefix="${prefix}arm_"/>
+
+        <xacro:wsg_50_xacro  finger_length="0.22" finger_tip="0.0" name="${prefix}gripper"/>
+        <joint name="${prefix}arm_to_tool" type="fixed">
+            <parent link="${prefix}arm_tool0"/>
+            <child link="${prefix}gripper_base_link"/>
+            <origin xyz="0 0 0" rpy="0 0 -3.1415926535"/>
+        </joint>
+        
+    </xacro:macro>
+</robot>
