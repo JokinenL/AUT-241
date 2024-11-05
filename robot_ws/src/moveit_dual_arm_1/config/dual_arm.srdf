@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="dual_arm">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm_1">
+        <joint name="first_arm_to_world"/>
+        <joint name="first_arm_joint_s"/>
+        <joint name="first_arm_joint_l"/>
+        <joint name="first_arm_joint_e"/>
+        <joint name="first_arm_joint_u"/>
+        <joint name="first_arm_joint_r"/>
+        <joint name="first_arm_joint_b"/>
+        <joint name="first_arm_joint_t"/>
+        <joint name="first_arm_link_t-tool0"/>
+    </group>
+    <group name="manipulator_1">
+        <link name="first_gripper_gripper_left"/>
+        <link name="first_gripper_finger_left"/>
+        <link name="first_gripper_gripper_right"/>
+        <link name="first_gripper_finger_right"/>
+        <link name="first_gripper_center"/>
+        <link name="first_gripper_base_link"/>
+    </group>
+    <group name="arm_2">
+        <joint name="second_arm_to_world"/>
+        <joint name="second_arm_joint_s"/>
+        <joint name="second_arm_joint_l"/>
+        <joint name="second_arm_joint_e"/>
+        <joint name="second_arm_joint_u"/>
+        <joint name="second_arm_joint_r"/>
+        <joint name="second_arm_joint_b"/>
+        <joint name="second_arm_joint_t"/>
+        <joint name="second_arm_link_t-tool0"/>
+    </group>
+    <group name="manipulator_2">
+        <link name="second_gripper_base_link"/>
+        <link name="second_gripper_center"/>
+        <link name="second_gripper_gripper_left"/>
+        <link name="second_gripper_finger_left"/>
+        <link name="second_gripper_gripper_right"/>
+        <link name="second_gripper_finger_right"/>
+    </group>
+    <group name="dual_arm">
+        <joint name="first_arm_base_link-base"/>
+        <joint name="first_arm_joint_s"/>
+        <joint name="first_arm_joint_l"/>
+        <joint name="first_arm_joint_e"/>
+        <joint name="first_arm_joint_u"/>
+        <joint name="first_arm_joint_r"/>
+        <joint name="first_arm_joint_b"/>
+        <joint name="first_arm_joint_t"/>
+        <joint name="first_arm_link_t-tool0"/>
+        <joint name="second_arm_base_link-base"/>
+        <joint name="second_arm_joint_s"/>
+        <joint name="second_arm_joint_l"/>
+        <joint name="second_arm_joint_e"/>
+        <joint name="second_arm_joint_u"/>
+        <joint name="second_arm_joint_r"/>
+        <joint name="second_arm_joint_b"/>
+        <joint name="second_arm_joint_t"/>
+        <joint name="second_arm_link_t-tool0"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="arm_1">
+        <joint name="first_arm_joint_b" value="0"/>
+        <joint name="first_arm_joint_e" value="0"/>
+        <joint name="first_arm_joint_l" value="0"/>
+        <joint name="first_arm_joint_r" value="0"/>
+        <joint name="first_arm_joint_s" value="0"/>
+        <joint name="first_arm_joint_t" value="0"/>
+        <joint name="first_arm_joint_u" value="0"/>
+    </group_state>
+    <group_state name="home" group="arm_2">
+        <joint name="second_arm_joint_b" value="0"/>
+        <joint name="second_arm_joint_e" value="0"/>
+        <joint name="second_arm_joint_l" value="0"/>
+        <joint name="second_arm_joint_r" value="0"/>
+        <joint name="second_arm_joint_s" value="0"/>
+        <joint name="second_arm_joint_t" value="0"/>
+        <joint name="second_arm_joint_u" value="0"/>
+    </group_state>
+    <group_state name="close" group="manipulator_1">
+        <joint name="first_gripper_finger_left_joint" value="-0.0078"/>
+    </group_state>
+    <group_state name="open" group="manipulator_1">
+        <joint name="first_gripper_finger_left_joint" value="-0.055"/>
+    </group_state>
+    <group_state name="close" group="manipulator_2">
+        <joint name="second_gripper_finger_left_joint" value="-0.0078"/>
+    </group_state>
+    <group_state name="open" group="manipulator_2">
+        <joint name="second_gripper_finger_left_joint" value="-0.055"/>
+    </group_state>
+    <group_state name="test_pose" group="arm_1">
+        <joint name="first_arm_joint_b" value="0"/>
+        <joint name="first_arm_joint_e" value="0"/>
+        <joint name="first_arm_joint_l" value="-0.473"/>
+        <joint name="first_arm_joint_r" value="0"/>
+        <joint name="first_arm_joint_s" value="-1.5389"/>
+        <joint name="first_arm_joint_t" value="0"/>
+        <joint name="first_arm_joint_u" value="0"/>
+    </group_state>
+    <group_state name="test_pose" group="arm_2">
+        <joint name="second_arm_joint_b" value="-1.0295"/>
+        <joint name="second_arm_joint_e" value="0"/>
+        <joint name="second_arm_joint_l" value="-0.6288"/>
+        <joint name="second_arm_joint_r" value="-0.1"/>
+        <joint name="second_arm_joint_s" value="0.9379"/>
+        <joint name="second_arm_joint_t" value="0"/>
+        <joint name="second_arm_joint_u" value="0"/>
+    </group_state>
+    <group_state name="test_pose" group="dual_arm">
+        <joint name="first_arm_joint_b" value="0"/>
+        <joint name="first_arm_joint_e" value="0"/>
+        <joint name="first_arm_joint_l" value="-0.4439"/>
+        <joint name="first_arm_joint_r" value="0"/>
+        <joint name="first_arm_joint_s" value="0"/>
+        <joint name="first_arm_joint_t" value="0"/>
+        <joint name="first_arm_joint_u" value="0"/>
+        <joint name="second_arm_joint_b" value="0"/>
+        <joint name="second_arm_joint_e" value="0"/>
+        <joint name="second_arm_joint_l" value="0.5722"/>
+        <joint name="second_arm_joint_r" value="0"/>
+        <joint name="second_arm_joint_s" value="0"/>
+        <joint name="second_arm_joint_t" value="0"/>
+        <joint name="second_arm_joint_u" value="0"/>
+    </group_state>
+    <group_state name="home" group="dual_arm">
+        <joint name="first_arm_joint_b" value="0"/>
+        <joint name="first_arm_joint_e" value="0"/>
+        <joint name="first_arm_joint_l" value="0"/>
+        <joint name="first_arm_joint_r" value="0"/>
+        <joint name="first_arm_joint_s" value="0"/>
+        <joint name="first_arm_joint_t" value="0"/>
+        <joint name="first_arm_joint_u" value="0"/>
+        <joint name="second_arm_joint_b" value="0"/>
+        <joint name="second_arm_joint_e" value="0"/>
+        <joint name="second_arm_joint_l" value="0"/>
+        <joint name="second_arm_joint_r" value="0"/>
+        <joint name="second_arm_joint_s" value="0"/>
+        <joint name="second_arm_joint_t" value="0"/>
+        <joint name="second_arm_joint_u" value="0"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="gripper_1" parent_link="first_arm_tool0" group="manipulator_1" parent_group="arm_1"/>
+    <end_effector name="gripper_2" parent_link="second_arm_tool0" group="manipulator_2" parent_group="arm_2"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="first_arm_base_link" link2="first_arm_link_s" reason="User"/>
+    <disable_collisions link1="first_arm_link_e" link2="first_arm_link_l" reason="User"/>
+    <disable_collisions link1="first_arm_link_e" link2="first_arm_link_u" reason="User"/>
+    <disable_collisions link1="first_arm_link_r" link2="first_arm_link_u" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_arm_link_r" reason="User"/>
+    <disable_collisions link1="first_arm_link_l" link2="first_arm_link_s" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_arm_link_t" reason="User"/>
+    <disable_collisions link1="first_arm_link_t" link2="first_gripper_base_link" reason="User"/>
+    <disable_collisions link1="first_gripper_base_link" link2="first_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="first_gripper_finger_left" link2="first_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="first_gripper_finger_left" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_gripper_finger_right" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_gripper_base_link" link2="first_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="first_gripper_base_link" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_gripper_base_link" link2="first_gripper_finger_right" reason="User"/>
+    <disable_collisions link1="first_gripper_gripper_left" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_gripper_finger_right" link2="first_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="first_arm_link_t" link2="first_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="first_arm_link_t" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_arm_link_t" link2="first_gripper_finger_right" reason="User"/>
+    <disable_collisions link1="first_arm_link_t" link2="first_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_gripper_finger_right" reason="User"/>
+    <disable_collisions link1="first_arm_link_b" link2="first_gripper_base_link" reason="User"/>
+    <disable_collisions link1="second_arm_base_link" link2="second_arm_link_s" reason="User"/>
+    <disable_collisions link1="second_arm_link_l" link2="second_arm_link_s" reason="User"/>
+    <disable_collisions link1="second_arm_link_e" link2="second_arm_link_l" reason="User"/>
+    <disable_collisions link1="second_arm_link_e" link2="second_arm_link_u" reason="User"/>
+    <disable_collisions link1="second_arm_link_r" link2="second_arm_link_u" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_arm_link_r" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_arm_link_t" reason="User"/>
+    <disable_collisions link1="second_arm_link_t" link2="second_gripper_base_link" reason="User"/>
+    <disable_collisions link1="second_arm_link_t" link2="second_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="second_arm_link_t" link2="second_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="second_arm_link_t" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_arm_link_t" link2="second_gripper_finger_right" reason="User"/>
+    <disable_collisions link1="second_gripper_base_link" link2="second_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="second_gripper_base_link" link2="second_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="second_gripper_base_link" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_gripper_base_link" link2="second_gripper_finger_right" reason="User"/>
+    <disable_collisions link1="second_gripper_finger_left" link2="second_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="second_gripper_gripper_left" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_gripper_finger_left" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_gripper_finger_right" link2="second_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="second_gripper_finger_right" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_gripper_base_link" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_gripper_gripper_left" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_gripper_finger_left" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_gripper_gripper_right" reason="User"/>
+    <disable_collisions link1="second_arm_link_b" link2="second_gripper_finger_right" reason="User"/>
+</robot>
