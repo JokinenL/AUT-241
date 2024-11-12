@@ -9,3 +9,25 @@ source devel/setup.bash
 roslaunch dual_arm_robot test_sia20d_dual.launch
 
 # Change the "Fixed Frame" parameter from "base_link" to "world" in order to make the system visible
+
+
+
+
+# Using moveit setup assistant
+
+source /opt/ros/noetic/setup.bash && \
+cd /home/lauri/AUT-841/robot_ws && \
+source devel/setup.bash
+roslaunch moveit_setup_assistant setup_assistant.launch 
+
+# Launching my moveit demo
+
+source /opt/ros/noetic/setup.bash && \
+cd /home/lauri/AUT-841/robot_ws && \
+source devel/setup.bash
+roslaunch dual_arm_robot_moveit_config demo.launch
+
+# Visualize topics and nodes
+
+source /opt/ros/noetic/setup.bash
+rosrun rqt_graph rqt_graph
