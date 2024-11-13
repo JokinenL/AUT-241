@@ -122,9 +122,6 @@
         <joint name="two_sia20d_joint_t" value="0"/>
         <joint name="two_sia20d_joint_u" value="0"/>
     </group_state>
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="ee1" parent_link="one_sia20d_tool0" group="gripper1"/>
-    <end_effector name="ee2" parent_link="two_sia20d_tool0" group="gripper2"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="one_sia20d_base_link" link2="one_sia20d_link_e" reason="Never"/>
     <disable_collisions link1="one_sia20d_base_link" link2="one_sia20d_link_l" reason="Never"/>
