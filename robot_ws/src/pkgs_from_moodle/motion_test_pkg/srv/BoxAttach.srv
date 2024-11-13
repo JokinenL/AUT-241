@@ -1,7 +1,0 @@
-string robot_name #Must be: 'robot1' or 'robot2'
-string box_name
-bool attach #True to attach, False to release
-
----------------
-string message
-bool success

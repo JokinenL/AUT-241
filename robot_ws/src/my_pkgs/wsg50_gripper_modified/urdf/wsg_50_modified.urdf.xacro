@@ -11,7 +11,7 @@
       <visual>
          <origin xyz="0.0 0 0" rpy="0 0 0" />
          <geometry>
-            <mesh filename="package://wsg50_gripper/meshes/WSG50_110.stl" scale="1 1 1"/>
+            <mesh filename="package://wsg50_gripper_modified/meshes/WSG50_110.stl" scale="1 1 1"/>
          </geometry>
          <material name="grey">
             <color rgba="0.5 0.5 0.5 1"/>
@@ -21,7 +21,7 @@
       <collision>
           <origin xyz="0.0 0 0" rpy="0 0 0" />
           <geometry>
-             <mesh filename="package://wsg50_gripper/meshes/WSG50_110.stl" scale="1 1 1"/>
+             <mesh filename="package://wsg50_gripper_modified/meshes/WSG50_110.stl" scale="1 1 1"/>
          </geometry>
      </collision>
   </link>
@@ -56,7 +56,7 @@
       <visual>
           <origin xyz="0.0 0 0" rpy="0 0 0" />
           <geometry>
-             <mesh filename="package://wsg50_gripper/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
+             <mesh filename="package://wsg50_gripper_modified/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
 	     <!--box size="0.0175 0.03 0.024"/-->
           </geometry>
           <material name="blue">
@@ -68,7 +68,7 @@
           <origin xyz="0 0 0" rpy="0 0 0" />
           <geometry>
 	     <!--box size="0.0175 0.03 0.024"/-->
-             <mesh filename="package://wsg50_gripper/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
+             <mesh filename="package://wsg50_gripper_modified/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
          </geometry>
      </collision>
   </link>
@@ -87,7 +87,7 @@
 	      <origin xyz="0.0 0 -${finger_length}" rpy="0 0 0" />
          <geometry>
             <!--mesh filename="package://wsg_50_simulation/meshes/WSG-FMF.stl" scale="0.001 0.001 0.001"/-->
-            <mesh filename="package://wsg50_gripper/meshes/REMODEL_finger.stl" scale="1 1 1"/>
+            <mesh filename="package://wsg50_gripper_modified/meshes/REMODEL_finger.stl" scale="1 1 1"/>
          </geometry>
          <material name="black">
             <color rgba="0 0 0 1"/>
@@ -99,7 +99,7 @@
 	      <origin xyz="0 0 -${finger_length}" rpy="0 0 0" />
          <geometry>
             <!--<mesh filename="package://wsg_50_simulation/meshes/WSG-FMF.stl" scale="0.001 0.001 0.001"/>-->
-	         <mesh filename="package://wsg50_gripper/meshes/REMODEL_finger.stl" scale="1 1 1"/>
+	         <mesh filename="package://wsg50_gripper_modified/meshes/REMODEL_finger.stl" scale="1 1 1"/>
          </geometry>
      </collision>
   </link>
@@ -125,7 +125,7 @@
       <visual>
          <origin xyz="0.0 0 0" rpy="0 0 0" />
          <geometry>
-            <mesh filename="package://wsg50_gripper/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="package://wsg50_gripper_modified/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
 	         <!--box size="0.0175 0.03 0.024"/-->
          </geometry>
          <material name="blue">
@@ -137,7 +137,7 @@
          <origin xyz="0 0 0" rpy="0 0 0" />
          <geometry>
             <!--box size="0.0175 0.03 0.024"/-->
-            <mesh filename="package://wsg50_gripper/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="package://wsg50_gripper_modified/meshes/GUIDE_WSG50_110.stl" scale="0.001 0.001 0.001"/>
          </geometry>
       </collision>
    </link>
@@ -158,7 +158,7 @@
 	      <origin xyz="0.0 0 -${finger_length}" rpy="0 0 0" />
          <geometry>
             <!--mesh filename="package://wsg_50_simulation/meshes/WSG-FMF.stl" scale="0.001 0.001 0.001"/-->
-            <mesh filename="package://wsg50_gripper/meshes/REMODEL_finger.stl" scale="1 1 1"/>
+            <mesh filename="package://wsg50_gripper_modified/meshes/REMODEL_finger.stl" scale="1 1 1"/>
          </geometry>
          <material name="black">
 		      <color rgba="0 0 0 1"/>
@@ -170,7 +170,7 @@
          <origin xyz="0 0 -${finger_length}" rpy="0 0 0" />
          <geometry>
             <!--mesh filename="package://wsg_50_simulation/meshes/WSG-FMF.stl" scale="0.001 0.001 0.001"/-->
-	         <mesh filename="package://wsg50_gripper/meshes/REMODEL_finger.stl" scale="1 1 1"/>
+	         <mesh filename="package://wsg50_gripper_modified/meshes/REMODEL_finger.stl" scale="1 1 1"/>
          </geometry>
      </collision>
   </link>
