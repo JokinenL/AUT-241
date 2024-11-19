@@ -2,15 +2,18 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 	<xacro:macro name="motoman_sia20d_with_wsg" params="prefix">
 		<xacro:include filename="$(find motoman_sia20d_support)/urdf/sia20d_macro.xacro"/>
-		<xacro:include filename="$(find wsg50_gripper_modified)/urdf/wsg_50_modified.urdf.xacro"/>
+		<!--<xacro:include filename="$(find wsg50_gripper_modified)/urdf/wsg_50_modified.urdf.xacro"/>-->
+		<xacro:include filename="$(find wsg50_gripper)/urdf/wsg_50.urdf.xacro"/>
 		
 		<xacro:motoman_sia20d prefix="${prefix}sia20d_"/>
 		
-		<xacro:wsg_50_xacro name="${prefix}wsg" finger_length="0.22" finger_tip="0.0"/>
+		<!--<xacro:wsg_50_xacro name="${prefix}wsg" finger_length="0.22" finger_tip="0.0"/>-->
+		<xacro:wsg_50_xacro name="${prefix}wsg" finger_length="0.0" finger_tip="0.0"/>
 		<joint name="${prefix}tool0-wsg" type="fixed">
 			<parent link="${prefix}sia20d_tool0"/>
 			<child link="${prefix}wsg_base_link"/>
-			<origin xyz="0 0 0" rpy="0 0 -3.1415926535"/>
+			<!--<origin xyz="0 0 0" rpy="0 0 -3.1415926535"/>-->
+			<origin xyz="0 0 0" rpy="0 0 0"/>
 		</joint>
 	</xacro:macro>
 </robot>

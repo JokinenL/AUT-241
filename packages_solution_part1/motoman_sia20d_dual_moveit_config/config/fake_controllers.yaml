@@ -1,0 +1,55 @@
+controller_list:
+  - name: fake_arm1_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - robot1_joint_s
+      - robot1_joint_l
+      - robot1_joint_e
+      - robot1_joint_u
+      - robot1_joint_r
+      - robot1_joint_b
+      - robot1_joint_t
+  - name: fake_arm2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - robot2_joint_s
+      - robot2_joint_l
+      - robot2_joint_e
+      - robot2_joint_u
+      - robot2_joint_r
+      - robot2_joint_b
+      - robot2_joint_t
+  - name: fake_gripper1_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - robot1_gripper_finger_left_joint
+  - name: fake_gripper2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - robot2_gripper_finger_left_joint
+  - name: fake_dual_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - robot1_joint_s
+      - robot1_joint_l
+      - robot1_joint_e
+      - robot1_joint_u
+      - robot1_joint_r
+      - robot1_joint_b
+      - robot1_joint_t
+      - robot2_joint_s
+      - robot2_joint_l
+      - robot2_joint_e
+      - robot2_joint_u
+      - robot2_joint_r
+      - robot2_joint_b
+      - robot2_joint_t
+initial:  # Define initial robot poses.
+  - group: arm1
+    pose: home
+  - group: arm2
+    pose: home
+  - group: gripper1
+    pose: closed
+  - group: gripper2
+    pose: closed

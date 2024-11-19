@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<robot name="motoman_sia20d_dual" xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:arg name="prefix_robot1" default="robot1_"/>
+	<xacro:arg name="prefix_robot2" default="robot2_"/>
+
+	<xacro:include filename="$(find motoman_sia20d_dual)/urdf/sia20d_arm_gripper.xacro" />
+	
+	<link name="world"/>
+
+	<xacro:motoman_sia20d_gripper prefix="$(arg prefix_robot1)"/>
+
+	<joint name="$(arg prefix_robot1)world_base" type="fixed">
+		<origin xyz="0.7 0 0.7" rpy="0 0 0"/>
+		<parent link="world"/>
+		<child link="$(arg prefix_robot1)base_link"/>
+	</joint>
+
+	<xacro:motoman_sia20d_gripper prefix="$(arg prefix_robot2)"/>
+
+	<joint name="$(arg prefix_robot2)world_base" type="fixed">
+		<origin xyz="-0.7 0 0.7" rpy="0 0 0"/>
+		<parent link="world"/>
+		<child link="$(arg prefix_robot2)base_link"/>
+	</joint>
+</robot>
+

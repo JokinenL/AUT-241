@@ -1,0 +1,35 @@
+# Simulation settings for using moveit_sim_controllers
+moveit_sim_hw_interface:
+  joint_model_group: arm1
+  joint_model_group_pose: test_pose
+# Settings for ros_control_boilerplate control loop
+generic_hw_control_loop:
+  loop_hz: 300
+  cycle_time_error_threshold: 0.01
+# Settings for ros_control hardware interface
+hardware_interface:
+  joints:
+    - robot1_joint_s
+    - robot1_joint_l
+    - robot1_joint_e
+    - robot1_joint_u
+    - robot1_joint_r
+    - robot1_joint_b
+    - robot1_joint_t
+    - robot1_gripper_finger_left_joint
+    - robot2_joint_s
+    - robot2_joint_l
+    - robot2_joint_e
+    - robot2_joint_u
+    - robot2_joint_r
+    - robot2_joint_b
+    - robot2_joint_t
+    - robot2_gripper_finger_left_joint
+  sim_control_mode: 1  # 0: position, 1: velocity
+# Publish all joint states
+# Creates the /joint_states topic necessary in ROS
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+controller_list:
+  []

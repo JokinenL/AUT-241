@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: motoman_sia20d_dual
+    relative_path: urdf/sia20d_dual_arm.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/motoman_sia20d_dual.srdf
+  CONFIG:
+    author_name: Pablo
+    author_email: pmalvido7@gmail.com
+    generated_timestamp: 1699008259
