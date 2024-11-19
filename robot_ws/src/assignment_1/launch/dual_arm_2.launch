@@ -1,0 +1,6 @@
+<launch>
+    <arg name="robot_ip" doc="IP of controller"/>
+	<include file="$(find assignment_1)/launch/load_dual_arm.launch" />
+    <include file="$(find moveit_dual_arm)/launch/demo.launch" />
+    <node name="scene_spawner" pkg="motion_test_pkg" type="scene_interface.py"/>
+</launch>

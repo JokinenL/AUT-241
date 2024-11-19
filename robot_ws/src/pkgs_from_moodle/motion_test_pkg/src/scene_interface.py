@@ -19,8 +19,8 @@ rospy.init_node('scene_node', anonymous=True)
 scene = moveit_commander.PlanningSceneInterface()
 
 #MODIFY DEPENDING ON THE NAME OF THE LINKS OF YOUR ROBOT
-eef_links = ["robot1_gripper_base_link", "robot2_gripper_base_link"]
-touch_links = [["robot1_gripper_finger_left, robot1_gripper_finger_right"],["robot2_gripper_finger_left, robot2_gripper_finger_right"]]
+eef_links = ["first_gripper_base_link", "second_gripper_base_link"]
+touch_links = [["first_gripper_finger_left, first_gripper_finger_right"],["second_gripper_finger_left, second_gripper_finger_right"]]
 
 #Functions for poses conversion
 def frame_to_pose(frame):

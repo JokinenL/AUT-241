@@ -54,4 +54,4 @@ initial:  # Define initial robot poses per group
   - group: manipulator_2
     pose: close
   - group: dual_arm
-    pose: test_pose
+    pose: home
