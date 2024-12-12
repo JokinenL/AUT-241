@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: dual_arm_robot
+    relative_path: urdf/sia20d_dual.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/motoman_sia20d.srdf
+  CONFIG:
+    author_name: Lauri Jokinen
+    author_email: lauri.a.jokinen@tuni.fi
+    generated_timestamp: 1733830479

@@ -1,0 +1,57 @@
+controller_list:
+  - name: fake_arm1_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - one_sia20d_joint_s
+      - one_sia20d_joint_l
+      - one_sia20d_joint_e
+      - one_sia20d_joint_u
+      - one_sia20d_joint_r
+      - one_sia20d_joint_b
+      - one_sia20d_joint_t
+  - name: fake_arm2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - two_sia20d_joint_s
+      - two_sia20d_joint_l
+      - two_sia20d_joint_e
+      - two_sia20d_joint_u
+      - two_sia20d_joint_r
+      - two_sia20d_joint_b
+      - two_sia20d_joint_t
+  - name: fake_dual_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - one_sia20d_joint_s
+      - one_sia20d_joint_l
+      - one_sia20d_joint_e
+      - one_sia20d_joint_u
+      - one_sia20d_joint_r
+      - one_sia20d_joint_b
+      - one_sia20d_joint_t
+      - two_sia20d_joint_s
+      - two_sia20d_joint_l
+      - two_sia20d_joint_e
+      - two_sia20d_joint_u
+      - two_sia20d_joint_r
+      - two_sia20d_joint_b
+      - two_sia20d_joint_t
+  - name: fake_gripper1_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - one_wsg_finger_left_joint
+  - name: fake_gripper2_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - two_wsg_finger_left_joint
+initial:  # Define initial robot poses per group
+  - group: arm1
+    pose: home
+  - group: arm2
+    pose: home
+  - group: dual_arm
+    pose: home
+  - group: gripper1
+    pose: open
+  - group: gripper2
+    pose: open
