@@ -1,4 +1,3 @@
-
 # Terminal 1
 source /opt/ros/noetic/setup.bash
 source <path_to_the_parent_directory_of_the_workspace>/robot_ws/devel/setup.bash
