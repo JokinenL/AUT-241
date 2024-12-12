@@ -1,0 +1,31 @@
+
+# Terminal 1
+source /opt/ros/noetic/setup.bash
+source <path_to_the_parent_directory_of_the_workspace>/robot_ws/devel/setup.bash
+roslaunch motion_test_pkg motion_control.launch
+
+# Terminal 2
+source /opt/ros/noetic/setup.bash
+source <path_to_the_parent_directory_of_the_workspace>/robot_ws/devel/setup.bash
+rostopic pub /process_action/goal motion_test_pkg/ProcessActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal: {}" 
+
+# Terminal 3
+source /opt/ros/noetic/setup.bash
+source <path_to_the_parent_directory_of_the_workspace>/robot_ws/devel/setup.bash
+rostopic echo /process_action/feedback
+
+# Terminal 4
+source /opt/ros/noetic/setup.bash
+source <path_to_the_parent_directory_of_the_workspace>/robot_ws/devel/setup.bash
+rostopic echo /process_action/result
