@@ -5,7 +5,7 @@
   <arg name="paused" default="false" doc="Start Gazebo paused"/>
   <arg name="world_name" default="worlds/empty.world" doc="Gazebo world file"/>
   <arg name="world_pose" default="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0" doc="Pose to spawn the robot at"/>
-  <arg name="initial_joint_positions" default=" -J one_sia20d_joint_b 0 -J one_sia20d_joint_e 2.967 -J one_sia20d_joint_l 0.0496 -J one_sia20d_joint_r 1.0549 -J one_sia20d_joint_s 0 -J one_sia20d_joint_t 0.313 -J one_sia20d_joint_u -0.9126 -J one_wsg_finger_left_joint -0.0077 -J two_sia20d_joint_b 0 -J two_sia20d_joint_e -0.2737 -J two_sia20d_joint_l -0.7226 -J two_sia20d_joint_r 0 -J two_sia20d_joint_s 0 -J two_sia20d_joint_t 0 -J two_sia20d_joint_u 0.8727 -J two_wsg_finger_left_joint -0.0077" doc="Initial joint configuration of the robot"/>
+  <arg name="initial_joint_positions" default=" -J one_sia20d_joint_b 0 -J one_sia20d_joint_e 0 -J one_sia20d_joint_l 0 -J one_sia20d_joint_r 0 -J one_sia20d_joint_s 0 -J one_sia20d_joint_t 0 -J one_sia20d_joint_u 0 -J one_wsg_finger_left_joint -0.055 -J two_sia20d_joint_b 0 -J two_sia20d_joint_e 0 -J two_sia20d_joint_l 0 -J two_sia20d_joint_r 0 -J two_sia20d_joint_s 0 -J two_sia20d_joint_t 0 -J two_sia20d_joint_u 0 -J two_wsg_finger_left_joint -0.055" doc="Initial joint configuration of the robot"/>
 
   <!-- Start Gazebo paused to allow the controllers to pickup the initial pose -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch" pass_all_args="true">

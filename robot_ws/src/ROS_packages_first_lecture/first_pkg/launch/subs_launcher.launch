@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="subscriber_node" pkg="first_pkg" type="subscriber_node.py" output="screen">
+    </node>
+</launch>  

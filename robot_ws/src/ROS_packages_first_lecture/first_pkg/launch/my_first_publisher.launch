@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="msg" default="Hello world"/> 
+    <node name="string_publisher_node" pkg="first_pkg" type="my_first_publisher.py" output="screen">
+	<param name="msg" value="$(arg msg)" />
+    </node>
+</launch>  

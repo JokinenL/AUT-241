@@ -1,0 +1,11 @@
+<launch>
+    <!-- 
+     -->
+
+    <include file="$(find dual_arm_robot_moveit_config)/launch/demo.launch" />
+    <node name="scene_node" pkg="motion_test_pkg" type="scene_interface.py" output="screen" />
+    <node name="pose_generator_node" pkg="motion_test_pkg" type="random_pose_generator.py" output="screen" />
+    <node name="plotting_node" pkg="motion_test_pkg" type="plot.py" output="screen" />
+
+
+</launch>

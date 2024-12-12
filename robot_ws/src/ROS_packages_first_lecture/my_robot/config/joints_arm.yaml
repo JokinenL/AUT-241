@@ -1,0 +1,39 @@
+FASTbot:
+  # Publish all joint states
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position controllers
+  arm_position_controller:
+    type: effort_controllers/JointTrajectoryController
+    joints: 
+      - base_link_link_1
+      - link_1_link_2
+      - link_2_link_3
+      - link_3_link_4
+      - link_4_link_5
+    constraints:
+      goal_time: 0.5
+      stopped_velocity_tolerance: 0.02
+      base_link_link_1:
+        trajectory: 1.0
+        goal: 0.5
+      link_1_link_2:
+        trajectory: 1.0
+        goal: 0.5
+      link_2_link_3:        
+        trajectory: 1.0
+        goal: 0.5
+      link_3_link_4:
+        trajectory: 1.0
+        goal: 0.5
+      link_4_link_5:
+        trajectory: 1.0
+        goal: 0.5
+    gains: 
+      base_link_link_1: {p: 20000.0, i: 100, d: 70.0}
+      link_1_link_2: {p: 15000.0, i: 250, d: 70.0}
+      link_2_link_3: {p: 4500.0, i: 500, d: 70.0}
+      link_3_link_4: {p: 3000.0, i: 50, d: 70.0}
+      link_4_link_5: {p: 1000.0, i: 50, d: 70.0}

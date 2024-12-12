@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: my_robot
+    relative_path: urdf/robot_with_controllers.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/FASTbot.srdf
+  CONFIG:
+    author_name: Pablo
+    author_email: pablo.malvidofresnillo@tuni.fi
+    generated_timestamp: 1636634850

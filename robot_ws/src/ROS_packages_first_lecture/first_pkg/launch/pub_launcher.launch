@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="start" default="0"/> 
+    <node name="publisher_node" pkg="first_pkg" type="publisher_node.py" output="screen">
+	<param name="start" value="$(arg start)" />
+    </node>
+</launch>  

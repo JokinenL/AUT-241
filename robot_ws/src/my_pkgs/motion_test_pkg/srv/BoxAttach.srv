@@ -1,0 +1,7 @@
+string robot_name #Must be: 'arm1' or 'arm2'
+string box_name
+bool attach #True to attach, False to release
+
+---------------
+string message
+bool success

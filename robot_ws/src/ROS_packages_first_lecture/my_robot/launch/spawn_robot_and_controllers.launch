@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+		<!-- Robot model -->
+		<param name="robot_description" command="cat '$(find my_robot)/urdf/robot_with_controllers.urdf'" />
+		<arg name="x" default="0"/>
+		<arg name="y" default="0"/>
+		<arg name="z" default="0.5"/>
+
+		<!-- Create gazebo world -->
+		<include file="/opt/ros/noetic/share/gazebo_ros/launch/empty_world.launch" />
+
+		<!-- Spawn the robot model -->
+		<node name="my_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model FASTbot -x $(arg x) -y $(arg y) -z $(arg z)"/>
+
+		<!-- Load controllers -->
+		<rosparam command="load" file="$(find my_robot)/config/joints.yaml" />
+
+		<!-- Controllers -->
+		<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/FASTbot" args="joint_state_controller joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller joint5_position_controller --shutdown-timeout 30"/>
+
+		<!-- Convert joint states to tf transforms for rviz -->
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+			<remap from="/joint_states" to="/FASTbot/joint_states" />
+		</node>
+
+</launch>
